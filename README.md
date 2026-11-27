@@ -20,8 +20,6 @@ Launch `jupyter lab` in the repository root. Open a notebook and run its cells i
 
 Run `bash reproduce.sh` from the repository root after installing the dependencies above. The script runs the notebooks and compiled programs in dependency order.
 
-Run the entire sequence with:
-
 ```sh
 bash reproduce.sh
 ```
@@ -36,11 +34,17 @@ The CSV tables are generated locally; they are not tracked in this repository. T
 | `random_checks.cpp` | `random_graphs.csv`, `random_summary.csv`; finite-size rank certificate figure | MT19937-64, 20261127; 100 samples per size 6–20; all pairs for 100 samples per size 6–14, 20 per size 15–16 |
 | `all_pair_checks.cpp` | `all_pair_extension.csv`; extended all-pair figure | MT19937-64, 20261128; 20 samples per size 17–20, 10 per size 21–24; self-test on 140 graphs with seed 203 |
 | `sparse_checks.ipynb` | `sparse_checks.csv`; reduced trusted-check table | Python Random, 20261127; up to 3000 candidate subsets per size, first rank-certified graph at each size |
-| `verify_exact.ipynb` | Full conditional-operator equality at the exact visibility threshold, single-site dephasing identities, generator parity-block spectra and dense-graph noise example | Deterministic |
+| `verify_exact.ipynb` | Full conditional-operator equality at the exact visibility threshold, single-site dephasing identities, generator parity-block spectra, trusted-calibration coefficient and dense-graph noise example | Deterministic |
 | `verify_paulis.ipynb` | Terminal output; Pauli identities, rational obstruction and local noise threshold checks | Deterministic |
 | `benchmark_generator.ipynb` | `generator_benchmark.csv`; feasible generator-sum strategies | NumPy RNG, 20261127; 12 starts, at most 80 iterations, 15 cuts |
-| `noise_budget.ipynb` | `noise_budget.csv`; finite-shot table and gate/readout curves | Analytical model, deterministic |
+| `noise_budget.ipynb` | `noise_budget.csv`; four-witness finite-shot table, gate/readout curves and regression checks | Analytical model, deterministic |
 | `make_figures.ipynb` | All analytical and numerical vector plots | Dense graph illustration only: NumPy RNG, 15 |
+
+## Numerical checks for the revised manuscript
+
+The notebooks use the same graph labels and random seeds as the manuscript. In particular, `verify_exact.ipynb` verifies the full conditional-operator decomposition at the exact critical visibility, the generator parity-block polynomial, the local-noise threshold and the trusted-measurement error coefficient. The optional dense-graph calculation uses the graph identified by the reduced-check output.
+
+`noise_budget.ipynb` checks the four witness scores (generator, penalty, projected, visibility), the two reported finite-shot budget rows and the four gate-error endpoints at 1% readout error. The exact global white-noise transition is restricted to the five-cycle with the prescribed sharp measurement frame; the local and gate/readout error thresholds are model-conditional. The shot budgets are sufficient worst-case estimates.
 
 Adjacency masks are decimal bit masks with bit `j` indicating an edge to vertex `j`. In `random_graphs.csv`, an all-pair flag of `-1` indicates that the all-pair test was not performed. The sparse-check generator labels are binary stabilizer-generator masks encoded in decimal.
 
