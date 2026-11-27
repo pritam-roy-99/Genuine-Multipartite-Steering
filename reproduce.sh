@@ -16,6 +16,7 @@ g++ -O3 -std=c++17 all_pair_checks.cpp -o all_pair_checks
 ./all_pair_checks
 run_notebook sparse_checks.ipynb
 run_notebook verify_paulis.ipynb
+run_notebook verify_exact.ipynb
 OPENBLAS_NUM_THREADS=1 run_notebook benchmark_generator.ipynb
 run_notebook noise_budget.ipynb
 run_notebook make_figures.ipynb
