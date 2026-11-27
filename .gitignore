@@ -9,3 +9,4 @@ __pycache__/
 .venv/
 /random_checks
 /all_pair_checks
+.ipynb_checkpoints/
