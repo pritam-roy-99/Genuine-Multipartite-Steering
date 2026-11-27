@@ -1,0 +1,11 @@
+# Generated outputs and local environments
+*.csv
+*.pdf
+*.aux
+*.log
+*.out
+__pycache__/
+*.py[cod]
+.venv/
+/random_checks
+/all_pair_checks
