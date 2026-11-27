@@ -1,4 +1,4 @@
-# Limits of Genuine Multipartite Steering with Incompatible Measurements
+# Fundamental Limits and Robust Certification of Genuine Multipartite Steering
 
 Computational companion to the theoretical study. This package contains only the source scripts and instructions needed to regenerate the computational outputs and vector figures. No experimental data were generated. The rank and stabilizer tests are sufficient certificates; their failure does not prove absence of GMS. The generator-sum numerical search gives feasible lower bounds, not a rigorous upper bound.
 
