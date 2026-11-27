@@ -44,3 +44,4 @@ The CSV tables are generated locally; they are not tracked in this repository. T
 | `make_figures.py` | All analytical and numerical vector plots | Dense graph illustration only: NumPy RNG, 15 |
 
 Adjacency masks are decimal bit masks with bit `j` indicating an edge to vertex `j`. In `random_graphs.csv`, an all-pair flag of `-1` indicates that the all-pair test was not performed. The sparse-check generator labels are binary stabilizer-generator masks encoded in decimal.
+
