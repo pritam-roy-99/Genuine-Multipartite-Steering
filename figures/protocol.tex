@@ -66,16 +66,18 @@ smallnote/.style={font=\footnotesize,align=center}]
 }
 \draw[ink!75,line width=.65pt] (10.43,.59)--(10.43,3.63);
 \draw[ink!75,line width=.8pt,-{Stealth[length=3.5pt]}] (10.43,1.97)--(11.20,1.97);
-% Estimator: distinguish each single-shot record from correlator averages.
-\node[smallnote,anchor=west] at (11.20,4.08) {Seven settings; eight strings};
-\node[draw=ink!45,line width=.65pt,fill=white,align=center,inner sep=5pt,minimum width=5.57cm,minimum height=2.45cm] at (14.04,2.35) {
- \textbf{Single-shot signed parity}\\[3pt]
- $r_{j,\ell}=s_j a_{j,\ell} b_{j,\ell}\prod_{i=2}^{4}m_{i,j,\ell}$\\[3pt]
- \textbf{Average over $N_j$ runs}\\[3pt]
- $\overline r_j=\frac{1}{N_j}\sum_{\ell=1}^{N_j}r_{j,\ell}$\\[3pt]
- $\widehat{\mathcal W}_{C_5}=\frac12\sum_{j=1}^{8}\overline r_j$
+% Estimator: the trusted parity Q is obtained from the same YYZXZ records.
+\node[smallnote,anchor=west] at (11.20,4.08) {Seven settings; nine correlators};
+\node[draw=ink!45,line width=.65pt,fill=white,align=center,font=\footnotesize,inner sep=3pt,minimum width=5.57cm] at (14.04,2.20) {
+ \textbf{Single-shot signed parities}\\[1pt]
+ $r_{j,\ell}=s_j a_{j,\ell}b_{j,\ell}\prod_{i=2}^{4}m_{i,j,\ell}$\\[1pt]
+ $q_\ell=m_{2,\ell}m_{3,\ell}m_{4,\ell}\quad(YYZXZ)$\\[1pt]
+ \textbf{Correlator averages}\\[1pt]
+ $\overline r_j=\frac{1}{N_j}\sum_{\ell=1}^{N_j}r_{j,\ell},\quad\widehat{\langle Q\rangle}=\overline q$\\[1pt]
+ $\widehat{\mathcal W}_{C_5}=\frac12\sum_{j=1}^{8}\overline r_j$\\[1pt]
+ $\widehat{\mathcal V}_{C_5}=\widehat{\mathcal W}_{C_5}-(2\sqrt2-2)\overline q$
 };
-\node[font=\small\bfseries,text=res] at (14.04,.43) {$\mathcal W_{C_5}>2\sqrt2\ \Longrightarrow\ \text{GMS}$};
-\node[smallnote,text=ink!85] at (14.04,-.04) {Reuse the two $YY$ parity records.};
+\node[font=\small\bfseries,text=res] at (14.04,.28) {$\mathcal V_{C_5}>2\ \Longrightarrow\ \text{GMS}$};
+\node[smallnote,text=ink!85] at (14.04,-.14) {Reuse the $YYZXZ$ records.};
 \end{tikzpicture}
 \end{document}
