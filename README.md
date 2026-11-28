@@ -4,7 +4,7 @@ Computational companion to the theoretical study. This package contains only the
 
 ## Setup
 
-Run commands in the root of this directory. Python 3.13 and a C++17 compiler (GCC or compatible, with GNU bit built-ins) are suitable. The requirements file records the Python package versions available during packaging; numerical last digits and PDF typography can vary across platforms. For the standalone TikZ circuit, install a LaTeX distribution with TikZ and pdfLaTeX.
+Run commands in the root of this directory. Python 3.13 and a C++17 compiler (GCC or compatible, with GNU bit built-ins) are suitable. The requirements file records the Python package versions available during packaging; numerical last digits and PDF typography can vary across platforms. For the Computer Modern journal-style plots, install a LaTeX distribution with latex, type1cm, cm-super and dvipng (in addition to the Python requirements). For the standalone TikZ circuit, install TikZ and pdfLaTeX. The plot notebook uses real LaTeX text rendering, exports vector PDF figures and runs headlessly.
 
 ```sh
 python -m venv .venv
@@ -38,7 +38,7 @@ The CSV tables are generated locally; they are not tracked in this repository. T
 | `verify_paulis.ipynb` | Terminal output; Pauli identities, rational obstruction and local noise threshold checks | Deterministic |
 | `benchmark_generator.ipynb` | `generator_benchmark.csv`; feasible generator-sum strategies | NumPy RNG, 20261127; 12 starts, at most 80 iterations, 15 cuts |
 | `noise_budget.ipynb` | `noise_budget.csv`; four-witness finite-shot table, gate/readout curves and regression checks | Analytical model, deterministic |
-| `make_figures.ipynb` | All analytical and numerical vector plots | Dense graph illustration only: NumPy RNG, 15 |
+| `make_figures.ipynb` | All six analytical, numerical and graph-state figures in Computer Modern typography; PDF export | Dense graph illustration only: NumPy RNG, 15 |
 
 ## Numerical checks for the revised manuscript
 
